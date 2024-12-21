@@ -123,15 +123,24 @@ h2 {
     color: #3b3b3b;
 }
 
-.card-interests {
+.card-details {
     margin: 10px;
     font-size: smaller;
     color: #3b3b3b;
 }
 
-h4 {
+h3 {
     margin: 10px;
     font-size: medium;
+    font-weight: bold;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    color: #3b3b3b;
+}
+
+h4 {
+    margin: 10px;
+    font-size: smaller;
     font-weight: bold;
     text-transform: uppercase;
     font-family: 'Montserrat';

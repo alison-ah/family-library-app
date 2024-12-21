@@ -62,9 +62,9 @@ def add_book():
   if not call_number:
     errors.append("Oops! Looks like you forgot the Call No.!")
   
-#  url = request.form.get("url", "")
-#  if not url:
-#    errors.append("Oops! Looks like you #forgot an image!")
+  url = request.form.get("url", "")
+  if not url:
+    errors.append("Oops! Looks like you forgot an image!")
   
   book = Book.query.filter_by(title=title).first()
   if book:

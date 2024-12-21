@@ -7,13 +7,13 @@ function handleAddForm(event){
 
   var title = $("input[name='title']").val();
   var author = $("input[name='author']").val(); 
-  var callNo = $("input[name='call_number']").val();
+  var call_number = $("input[name='call_number']").val();
   var url = $("input[name='url']").val();
 
   $.post("/api/books/add", {
     "title": title,
     "author": author,
-    "call_number": callNo,
+    "call_number": call_number,
     "url": url,
     "date_added": new Date()
   }, function(data){
