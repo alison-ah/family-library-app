@@ -11,7 +11,7 @@ function handleAddForm(event){
   var url = $("input[name='url']").val();
 
   // Set default image URL if none provided
-  const defaultImage = "https://www.iconpacks.net/icons/2/free-opened-book-icon-3169-thumb.png";
+  const defaultImage = "https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781787550360/classic-book-cover-foiled-journal-9781787550360_hr.jpg";
   const imageUrl = url.trim() === "" ? defaultImage : url;
 
   $.post("/api/books/add", {
