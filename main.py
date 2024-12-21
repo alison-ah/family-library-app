@@ -34,7 +34,7 @@ def delete():
 
 @app.route("/api/books/", methods=["GET"])
 def get_books():
-  books=book.query.all()
+  books=Book.query.all()
   data = []
   for book in books:
     data.append({
