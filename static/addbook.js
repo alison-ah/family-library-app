@@ -13,7 +13,7 @@ function handleAddForm(event){
   $.post("/api/books/add", {
     "title": title,
     "author": author,
-    "call_number": call_number,
+    "call_number": callNo,
     "url": url,
     "date_added": new Date()
   }, function(data){
