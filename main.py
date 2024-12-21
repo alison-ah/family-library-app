@@ -32,7 +32,23 @@ def add():
 def delete():
   return app.send_static_file("deletebook.html")
 
-@app.route("/api/books/", methods=["GET"])
+@app.route("/api/books/search", methods=["GET"])
+def search_books():
+  query = request.args.get("q", "").lower()
+  books = Book.query.all()
+  data = []
+  for book in books:
+    if query in book.title.lower() or query in book.author.lower():
+      data.append({
+        "title": book.title,
+        "author": book.author,
+        "call_number": book.call_number,
+        "url": book.url,
+        "date_added": book.date_added
+      })
+  return jsonify(data)
+
+@app.route("/api/books/", methods=["GET"]) 
 def get_books():
   books=Book.query.all()
   data = []
