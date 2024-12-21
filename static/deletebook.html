@@ -3,9 +3,9 @@
   <script src="https://kit.fontawesome.com/8391330468.js" crossorigin="anonymous">
 	</script>
   <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans&display=swap" rel="stylesheet">
-  <link rel= "stylesheet" type= "text/css" href= "static/villain.css">
+  <link rel= "stylesheet" type= "text/css" href= "static/book.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script type="text/javascript" src="static/villain.js"></script>
+  <script type="text/javascript" src="static/deletebook.js"></script>
 </head>
 <body>
 	<div class="header">
@@ -17,7 +17,16 @@
   </div>
   
   <div class="content">
-
+    <form id="form" class="form">
+      <h2>REMOVE A CARD</h2>
+      <div class="form-input">
+      <div id="errors"></div>
+      <label>Title</label>
+        <input type="text" name="title"/>
+      </div>
+      <button type="submit">Remove Me!</button>
+    </form>
+  </div>
   </div>
 </body>
 </html>
