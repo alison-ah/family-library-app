@@ -4,7 +4,7 @@ $(document).ready(() => {
 
 function handleDeleteForm(event){
   event.preventDefault();
-  var title = $("input[title='title']").val();
+  var title = $("input[name='title']").val();
   $.post("/api/books/delete", {
     "title":title
   }, function(data){
