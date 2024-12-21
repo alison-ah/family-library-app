@@ -8,10 +8,10 @@ db = SQLAlchemy(app)
 
 class Book(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(80), unique=True, nullable=False)
-    description = db.Column(db.String(120), nullable=False)
-    interests = db.Column(db.String(250), nullable=False)
-    url = db.Column(db.String(250), nullable=False)
+    title = db.Column(db.String(80), unique=True, nullable=False)
+    author = db.Column(db.String(120), nullable=False)
+    call_number = db.Column(db.String(250), nullable=False)
+    url = db.Column(db.String(250), nullable=True)
     date_added = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 
     def __repr__(self):
@@ -38,9 +38,9 @@ def get_books():
   data = []
   for book in books:
     data.append({
-      "name": book.name,
-      "description": book.description,
-      "interests": book.interests,
+      "title": book.title,
+      "author": book.author,
+      "call_number": book.call_number,
       "url": book.url,
       "date_added": book.date_added
     })
@@ -49,45 +49,45 @@ def get_books():
 @app.route("/api/books/add", methods=["POST"])
 def add_book():
   errors = []
-  name = request.form.get("name", "")
+  title = request.form.get("title", "")
 
-  if not name:
-    errors.append("Oops! Looks like you forgot a name!")
+  if not title:
+    errors.append("Oops! Looks like you forgot a title!")
 
-  description = request.form.get("description", "")
-  if not description:
-    errors.append("Oops! Looks like you forgot a description!")
+  author = request.form.get("author", "")
+  if not author:
+    errors.append("Oops! Looks like you forgot an author!")
   
-  interests = request.form.get("interests", "")
-  if not interests:
-    errors.append("Oops! Looks like you forgot some interests!")
+  call_number = request.form.get("call_number", "")
+  if not call_number:
+    errors.append("Oops! Looks like you forgot the Call No.!")
   
-  url = request.form.get("url", "")
-  if not url:
-    errors.append("Oops! Looks like you forgot an image!")
+#  url = request.form.get("url", "")
+#  if not url:
+#    errors.append("Oops! Looks like you #forgot an image!")
   
-  book = Book.query.filter_by(name=name).first()
+  book = Book.query.filter_by(title=title).first()
   if book:
-    errors.append("Oops! A book with that name already exists!")
+    errors.append("Oops! A book with that title already exists!")
   
   if errors:
     return jsonify({"errors": errors})
   else:
-    new_book = Book(name=name, description=description, interests=interests, url=url)
+    new_book = Book(title=title, author=author, call_number=call_number, url=url)
     db.session.add(new_book)
     db.session.commit()
     return jsonify({"status": "success"})
 
 @app.route("/api/books/delete", methods=["POST"])
 def delete_book():
-  name = request.form.get("name", "")
-  book = Book.query.filter_by(name=name).first()
+  title = request.form.get("title", "")
+  book = Book.query.filter_by(title=title).first()
   if book:
     db.session.delete(book)
     db.session.commit()
     return jsonify({"status": "success"})
   else:
-    return jsonify({"errors": ["Oops! A book with that name doesn't exist!"]})
+    return jsonify({"errors": ["Oops! A book with that title doesn't exist!"]})
 
 @app.route("/api/", methods=["GET"])
 def get_endpoints():

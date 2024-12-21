@@ -5,15 +5,15 @@ $(document).ready(() => {
 function handleAddForm(event){
   event.preventDefault();
 
-  var name = $("input[name='author']").val();
-  var description = $("input[name='title']").val(); 
-  var interests = $("input[name='call-number']").val();
+  var title = $("input[name='title']").val();
+  var author = $("input[name='author']").val(); 
+  var callNo = $("input[name='call_number']").val();
   var url = $("input[name='url']").val();
 
   $.post("/api/books/add", {
-    "name": name,
-    "description": description,
-    "interests": interests,
+    "title": title,
+    "author": author,
+    "call_number": call_number,
     "url": url,
     "date_added": new Date()
   }, function(data){

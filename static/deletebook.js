@@ -4,9 +4,9 @@ $(document).ready(() => {
 
 function handleDeleteForm(event){
   event.preventDefault();
-  var name = $("input[name='name']").val();
+  var title = $("input[title='title']").val();
   $.post("/api/books/delete", {
-    "name":name
+    "title":title
   }, function(data){
     if (data.errors !== undefined) {
       document.getElementById("errors").innerHTML = data.errors.map((error) => (`<div class="error">${error}</div>`)).join("");
