@@ -32,6 +32,31 @@ def add():
 def delete():
   return app.send_static_file("deletebook.html")
 
+@app.route("/edit/<title>")
+def edit(title):
+  return app.send_static_file("editbook.html")
+
+@app.route("/api/books/edit", methods=["POST"])
+def edit_book():
+  title = request.form.get("title", "")
+  author = request.form.get("author", "")
+  call_number = request.form.get("call_number", "")
+  url = request.form.get("url", "")
+  
+  if not all([title, author, call_number, url]):
+    return jsonify({"errors": ["All fields are required"]})
+    
+  book = Book.query.filter_by(title=title).first()
+  if not book:
+    return jsonify({"errors": ["Book not found"]})
+    
+  book.author = author
+  book.call_number = call_number
+  book.url = url
+  db.session.commit()
+  
+  return jsonify({"status": "success"})
+
 @app.route("/api/books/search", methods=["GET"])
 def search_books():
   query = request.args.get("q", "").lower()
