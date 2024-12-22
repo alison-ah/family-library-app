@@ -255,13 +255,19 @@ button[type="button"]:hover {
 }
 
 .edit-btn, .delete-btn {
-  padding: 5px 10px;
+  padding: 8px;
+  margin: 0 5px;
   border: none;
-  border-radius: 3px;
   cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: white;
   text-decoration: none;
-  font-weight: bold;
+  width: 32px;
+  height: 32px;
 }
 
 .edit-btn {
