@@ -193,17 +193,16 @@ label {
   font-family: var(--default-font-family);
   text-transform: uppercase;
   font-weight: bold;
-  color: #3b3b3b;
-  font-size: medium;
+  color: var(--dark-gray);
+  font-size: 1em;
 }
 
 button { 
-  background-color: var(--accent-color-secondary);
   border: none;
   padding: 10px 20px;
   font-weight: bold;
   color: #fff;
-  font-size: 16px;
+  font-size: 1em;
   margin: 10px;
   font-family: var(--default-font-family);
   cursor: pointer;
@@ -249,7 +248,7 @@ button[type="button"]:hover {
 
 .card-actions {
   position: absolute;
-  bottom: 120px;
+  bottom: 19px;
   right: 15px;
   gap: 10px;
 }
@@ -259,31 +258,15 @@ button[type="button"]:hover {
   margin: 0 5px;
   border: none;
   cursor: pointer;
-  border-radius: 4px;
   font-size: 16px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--medium-gray);
+  background-color: var(--primary-background-color);
   text-decoration: none;
   width: 32px;
   height: 32px;
-}
-
-.edit-btn {
-  background-color: var(--accent-color-secondary);
-}
-
-.edit-btn:hover {
-  background-color: var(--accent-color-secondary-hover);
-}
-
-.delete-btn {
-  background-color: var(--accent-color);
-}
-
-.delete-btn:hover {
-  background-color: var(--accent-color-hover);
 }
 
 .card {
