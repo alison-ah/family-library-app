@@ -267,6 +267,7 @@ button[type="button"]:hover {
   text-decoration: none;
   width: 32px;
   height: 32px;
+  pointer-events: none;
 }
 
 .card {
