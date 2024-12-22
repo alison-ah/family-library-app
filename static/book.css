@@ -131,9 +131,9 @@ h2 {
 
 .card-date-added {
   margin: 16px 10px;
-  font-size: x-small;
+  font-size: 0.8em;
   font-weight: 300;
-  color: var(--medium-gray);
+  color: var(--dark-gray);
 }
 
 .card-description {
