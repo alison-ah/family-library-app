@@ -208,16 +208,20 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.save-changes {
+   background-color: var(--accent-color-secondary);
+}
+
+.save-changes:hover {
    background-color: var(--accent-color-secondary-hover);
 }
 
-button[type="button"] {
+.cancel-changes {
   background-color: var(--accent-color);
   font-weight: bold;
 }
 
-button[type="button"]:hover {
+.cancel-changes:hover {
   background-color: var(--accent-color-hover);
 }
 
