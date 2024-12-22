@@ -5,8 +5,6 @@
   --accent-color-hover: #570011;
   --accent-color-secondary: #31544c;
   --accent-color-secondary-hover: #1e332e;
-  --accent-color-text: #151010;
-  --light-gray: #c7cdd1;
   --medium-gray: #999;
   --dark-gray: #3b3b3b;
   --border-color: #ddd;
@@ -51,7 +49,7 @@ body {
   text-align: center;
   padding: 12px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 1.5em;
   line-height: 25px;
   font-family: var(--headings-font-family);
   font-weight: bold;
@@ -64,14 +62,42 @@ body {
   float: right;
 }
 
+h1 {
+  color: var(--accent-color);
+  padding: 10px;
+  margin-top: 15px;
+  font-family: var(--headings-font-family);
+  text-align: center;
+  font-size: 2em;
+  width: 100%
+}
+
+a {
+  text-decoration: none
+}
+
 .content {
   display: flex;
   flex-wrap: wrap;
   padding-top: 2em;
 }
 
+h2 {
+  color: var(--primary-background-color);
+  background-color: var(--dark-gray);
+  padding: 10px;
+  padding-right: 15px;
+  margin-top: 0;
+  font-family: var(--headings-font-family);  
+  text-transform: uppercase;
+  text-align: CENTER;
+  font-size: 20px;
+  width: 100%
+}
+
 .card {
   width: 350px;
+  position: relative;
   margin: 5px auto 20px auto;
   padding-bottom: 1em;
   background-color: var(--primary-background-color);
@@ -96,32 +122,6 @@ body {
   text-transform: uppercase;
   text-align: CENTER;
   font-size: 20px;
-}
-
-h1 {
-  color: var(--accent-color);
-  padding: 10px;
-  margin-top: 15px;
-  font-family: var(--headings-font-family);
-  text-align: center;
-  font-size: 20px;
-  width: 100%
-}
-
-h2 {
-  color: #fff;
-  background-color: #3b3b3b;
-  padding: 10px;
-  margin-top: 0;
-  font-family: var(--headings-font-family);  
-  text-transform: uppercase;
-  text-align: CENTER;
-  font-size: 20px;
-  width: 100%
-}
-
-a {
-  text-decoration: none
 }
 
 .card-body {
@@ -150,6 +150,29 @@ a {
   color: var(--dark-gray);
 }
 
+.card-actions {
+  position: absolute;
+  bottom: 19px;
+  right: 15px;
+  gap: 10px;
+}
+
+.edit-btn, .delete-btn {
+  padding: 8px;
+  margin: 0 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--medium-gray);
+  background-color: var(--primary-background-color);
+  text-decoration: none;
+  width: 32px;
+  height: 32px;
+}
+
 h3 {
   margin: 10px;
   font-size: 1.5em;;
@@ -170,12 +193,12 @@ h4 {
 }
 
 .form {
-  width: 600px;
+  width: 90%;
   margin: auto;
   background-color: var(--primary-background-color);
   border: 1px solid var(--border-color);
   box-shadow: var(--box-shadow);
-  padding: 0 20px 20px 0;
+  padding: 0 25px 20px 0;
 }
 
 input {
@@ -201,7 +224,7 @@ button {
   border: none;
   padding: 10px 20px;
   font-weight: bold;
-  color: #fff;
+  color: var(--primary-background-color);
   font-size: 1em;
   margin: 10px;
   font-family: var(--default-font-family);
@@ -236,43 +259,38 @@ button {
   padding: 10px;
 }
 
-.search {
-  padding: 20px;
+.attribution { 
+  font-size: .85em; 
   text-align: center;
+  margin: 0 25%;
+  padding-bottom: 1em;
+  color: var(--primary-color); 
 }
 
-.search input {
-  width: 50%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid var(---border-color);
-  box-shadow: var(--box-shadow);
-  border-radius: 4px;
+.attribution a { 
+  color: var(--accent-color); 
 }
 
-.card-actions {
-  position: absolute;
-  bottom: 19px;
-  right: 15px;
-  gap: 10px;
+@media (min-width: 1200px) {
+  .header {
+    vertical-align: middle;
+    height: auto;
+    margin: 0px auto;
+    padding: 20px 10px;
+    font-family: var(--headings-font-family);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .form {
+    width: 600px;
+  }
+
+  .card {
+    width: 350px;
+  }
 }
 
-.edit-btn, .delete-btn {
-  padding: 8px;
-  margin: 0 5px;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--medium-gray);
-  background-color: var(--primary-background-color);
-  text-decoration: none;
-  width: 32px;
-  height: 32px;
-}
 
-.card {
-  position: relative;
-}
+
+

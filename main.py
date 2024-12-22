@@ -7,15 +7,15 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///book.db"
 db = SQLAlchemy(app)
 
 class Book(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(80), unique=True, nullable=False)
-    author = db.Column(db.String(120), nullable=False)
-    call_number = db.Column(db.String(250), nullable=False)
-    url = db.Column(db.String(250), nullable=True)
-    date_added = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+  id = db.Column(db.Integer, primary_key=True)
+  title = db.Column(db.String(80), unique=True, nullable=False)
+  author = db.Column(db.String(120), nullable=False)
+  call_number = db.Column(db.String(250), nullable=False)
+  url = db.Column(db.String(250), nullable=True)
+  date_added = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 
-    def __repr__(self):
-        return "<Book "+ self.name + ">"
+  def __repr__(self):
+    return "<Book "+ self.name + ">"
 
 with app.app_context():
 	db.create_all()
