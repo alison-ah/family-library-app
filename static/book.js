@@ -22,15 +22,26 @@ function displayBooks(data) {
   }
 }
 function deleteCard(title) {
-  if (confirm('Are you sure you want to delete this book?')) {
-    $.post("/api/books/delete", {
-      "title": title
-    }, function(data) {
-      if (data.errors !== undefined) {
-        alert(data.errors.join('\n'));
-      } else {
-        window.location.reload();
-      }
-    });
-  }
+  Swal.fire({
+    title: 'Delete Book',
+    text: 'Are you sure you want to delete this book?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#d33',
+    cancelButtonColor: '#3b3b3b',
+    confirmButtonText: 'Yes, delete it',
+    cancelButtonText: 'Cancel'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      $.post("/api/books/delete", {
+        "title": title
+      }, function(data) {
+        if (data.errors !== undefined) {
+          Swal.fire('Error', data.errors.join('\n'), 'error');
+        } else {
+          window.location.reload();
+        }
+      });
+    }
+  });
 }
