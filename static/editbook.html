@@ -1,15 +1,21 @@
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <script src="https://kit.fontawesome.com/8391330468.js" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Jost:wght@400;700&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" type="text/css" href="/static/book.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script type="text/javascript" src="/static/editbook.js"></script>
+  <script src="/static/editbook.js"></script>
+<title>Family Library App: Edit a Book</title>
+
 </head>
 <body>
   <div class="header">
-    <a href="/" class="logo"><h1>Holland Family Library</h1></a>
+    <a href="/" class="logo"><h1>Family Library</h1></a>
     <div class="header-right">
       <a href="/add"><i class="fas fa-plus"></i> Add Book</a>
     </div>
@@ -25,7 +31,7 @@
         </div>
         <div class="form-input">
           <label for="author">Author</label>
-          <input type="text" name="author"/>
+          <input type="text" name="author">
         </div>
         <div class="form-input">
           <label for="call_number">Call No.</label>
@@ -35,7 +41,7 @@
           <label for="url">Image URL</label>
           <input type="text" name="url"/>
         </div>
-        <button class="save-changes" type="submit">Save Changes</button>
+        <button class="save-changes" type="submit">Save</button>
         <button class="cancel-changes" onclick="window.location='/'">Cancel</button>
       </form>
     </div>

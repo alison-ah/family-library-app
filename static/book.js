@@ -23,9 +23,7 @@ function displayBooks(data) {
 }
 function deleteCard(title) {
   Swal.fire({
-    title: 'Delete Book',
-    text: 'Are you sure you want to delete this book?',
-    icon: 'warning',
+    text: 'Are you sure you want to delete this book? This action cannot be undone.',
     showCancelButton: true,
     confirmButtonColor: '#d33',
     cancelButtonColor: '#3b3b3b',
