@@ -8,7 +8,7 @@ db = SQLAlchemy(app)
 
 class Book(db.Model):
   id = db.Column(db.Integer, primary_key=True)
-  title = db.Column(db.String(80), unique=True, nullable=False)
+  title = db.Column(db.String(80), nullable=False)
   author = db.Column(db.String(120), nullable=False)
   call_number = db.Column(db.String(250), nullable=False)
   url = db.Column(db.String(250), nullable=True)
