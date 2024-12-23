@@ -18,8 +18,7 @@ function handleAddForm(event){
     "title": title,
     "author": author,
     "call_number": call_number,
-    "url": imageUrl,
-    "date_added": new Date()
+    "url": imageUrl
   }, function(data){
     if (data.errors !== undefined) {
       document.getElementById("errors").innerHTML = data.errors.map((error) => (`<div class="error">${error}</div>`)).join("");
