@@ -3,7 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
 app = Flask("app")
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///book.db"
+import os
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///book.db" if not os.getenv("REPL_SLUG") else "sqlite:///:memory:"
 db = SQLAlchemy(app)
 
 class Book(db.Model):
@@ -18,8 +19,17 @@ class Book(db.Model):
     return "<Book "+ self.name + ">"
 
 with app.app_context():
-	db.create_all()
-	db.session.commit()
+    db.create_all()
+    
+    # Add sample data if running in deployment
+    if os.getenv("REPL_SLUG") and not Book.query.first():
+        sample_books = [
+            Book(title="Sample Book 1", author="Author 1", call_number="CN001", url="https://example.com/1"),
+            Book(title="Sample Book 2", author="Author 2", call_number="CN002", url="https://example.com/2")
+        ]
+        db.session.bulk_save_objects(sample_books)
+    
+    db.session.commit()
   
 @app.route("/")
 def book_cards():
