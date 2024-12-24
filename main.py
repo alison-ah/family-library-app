@@ -143,12 +143,14 @@ def delete_book():
   else:
     return jsonify({"errors": ["Oops! A book with that title doesn't exist!"]})
 
-@app.route("/api/", methods=["GET"])
+@app.route("/api/", methods=["GET"]) 
 def get_endpoints():
+  book_count = Book.query.count()
   endpoints = {
     "/api/books/": "GET - Retrieves all book data from the database",
-    "/api/books/add": "POST - Adds a new book to the database",
-    "/api/books/delete": "POST - Deletes a book from the database"
+    "/api/books/add": "POST - Adds a new book to the database", 
+    "/api/books/delete": "POST - Deletes a book from the database",
+    "total_books": book_count
   }
   return jsonify(endpoints)
 
