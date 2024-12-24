@@ -4,11 +4,13 @@ from datetime import datetime
 
 app = Flask("app")
 import os
-if os.getenv("REPL_DB_URL"):
-    app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("REPL_DB_URL")
+
+if os.getenv("DATABASE_URL"):
+    app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
 else:
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///book.db"
-app.config['SQLALCHEMY_ECHO'] = True  # Add SQL logging
+    
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 class Book(db.Model):
