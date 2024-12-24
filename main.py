@@ -8,6 +8,7 @@ if os.getenv("REPL_DB_URL"):
     app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("REPL_DB_URL")
 else:
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///book.db"
+app.config['SQLALCHEMY_ECHO'] = True  # Add SQL logging
 db = SQLAlchemy(app)
 
 class Book(db.Model):
