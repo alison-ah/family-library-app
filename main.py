@@ -4,7 +4,10 @@ from datetime import datetime
 
 app = Flask("app")
 import os
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///book.db" if not os.getenv("REPL_SLUG") else "sqlite:///:memory:"
+if os.getenv("REPL_DB_URL"):
+    app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("REPL_DB_URL")
+else:
+    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///book.db"
 db = SQLAlchemy(app)
 
 class Book(db.Model):
