@@ -236,7 +236,7 @@ button {
 }
 
 .save-changes:hover {
-   background-color: var(--accent-color-secondary-hover);
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .cancel-changes {
@@ -245,7 +245,7 @@ button {
 }
 
 .cancel-changes:hover {
-  background-color: var(--accent-color-hover);
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .form-input {
