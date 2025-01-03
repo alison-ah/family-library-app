@@ -240,7 +240,7 @@ button {
 }
 
 .cancel-changes {
-  background-color: var(--accent-color);
+  background-color: var(--dark-gray);
   font-weight: bold;
 }
 
