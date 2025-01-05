@@ -49,7 +49,7 @@ body {
   text-align: center;
   padding: 12px;
   text-decoration: none;
-  font-size: 2em;
+  font-size: 1.5em;
   line-height: 25px;
   font-family: var(--headings-font-family);
   font-weight: bold;
@@ -66,10 +66,11 @@ h1 {
   color: var(--accent-color);
   padding: 10px;
   margin-top: 15px;
+  margin-bottom: 0px;
   font-family: var(--headings-font-family);
   text-align: center;
   font-size: 3em;
-  width: 100%
+  width: 100%;
 }
 
 a {
@@ -292,6 +293,13 @@ button {
 }
 
 @media only screen and (min-width: 768px) {
+  h1 {
+    margin-bottom: 32px;
+  }
+  
+  .header-right a {
+    font-size: 2em;
+  }
   
   #searchInput {
     width: 50%;
