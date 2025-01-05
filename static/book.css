@@ -77,26 +77,27 @@ a {
 }
 
 .content {
-  display: flex;
-  flex-wrap: wrap;
   padding-top: 2em;
 }
 
 h2 {
+  display: flex;
+  justify-content: center;
   color: var(--primary-background-color);
   background-color: var(--dark-gray);
   padding: 10px;
   padding-right: 0px;
   margin-top: 0;
-  font-family: var(--headings-font-family);  
+  font-family: var(--headings-font-family); 
   text-transform: uppercase;
   text-align: CENTER;
-  font-size: 20px;
-  width: 100%
+  font-size: 1.2em;
+  
 }
 
 .card {
-  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
   position: relative;
   margin: 5px auto 20px auto;
   padding-bottom: 1em;
@@ -113,10 +114,9 @@ h2 {
 }
 
 .card-name {
-  width: 80%
+  width: 100%;
   color: var(--primary-background-color);
   background-color: var(--dark-gray);
-  padding: 10px;
   margin-top: 0;
   font-family: var(--headings-font-family);
   text-transform: uppercase;
@@ -193,17 +193,17 @@ h4 {
 }
 
 .form {
+  flex-wrap: wrap;
   width: 90%;
   margin: auto;
   background-color: var(--primary-background-color);
   border: 1px solid var(--border-color);
   box-shadow: var(--box-shadow);
-  padding: 1em 2em;
 }
 
 input {
-  width: 100%;
   margin-bottom: 1.25em;
+  width: 95%;
   height: 2.5em;
   border: none;
   margin-top: 5px;
@@ -213,6 +213,8 @@ input {
 }
 
 label {
+  display: flex;
+  width: 100%;
   font-family: var(--default-font-family);
   text-transform: uppercase;
   font-weight: bold;
@@ -292,37 +294,51 @@ button {
   
   #searchInput {
     width: 50%;
-
   }
+
+  h2 {
+    font-size: .8em;
+  }
+
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 2em;
+  }
+  
   .form {
     width: 600px;
   }
 
   .card {
-    width: 350px;
+    width: 45%;
+    justify-content: center;
   }
 
   .card-image {
-    width:300px;
-    padding: 0;
-  }
-
-  .card {
-    width: 350px;
-  }
-
-  .card-image {
-    width:300px;
+    width:80%;
     height:auto;
     margin: 5px 25px;
-  }
-
-  .card-name {
-    width: 94.5%;
   }
 
   .card-body {
     width:90%;
     margin: 5px auto auto;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+
+  #searchInput {
+    width: 50%;
+  }
+
+  h2 {
+    font-size: 1em;
+  }
+
+  .card {
+    width: 30%;
+    justify-content: center;
   }
 }
