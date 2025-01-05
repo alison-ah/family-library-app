@@ -47,7 +47,7 @@ body {
   float: left;
   color: var(--dark-gray);
   text-align: center;
-  padding: 12px;
+  padding: 0px;
   text-decoration: none;
   font-size: 1.5em;
   line-height: 25px;
@@ -55,7 +55,7 @@ body {
   font-weight: bold;
   margin-right: 20px;
   margin-left: 20px;
-  margin-top: 13px;
+  margin-top: 0px;
 }
 
 .header-right {
@@ -294,11 +294,12 @@ button {
 
 @media only screen and (min-width: 768px) {
   h1 {
-    margin-bottom: 32px;
+    margin-bottom: 34px;
   }
   
   .header-right a {
     font-size: 2em;
+    padding-top: 32px;
   }
   
   #searchInput {
