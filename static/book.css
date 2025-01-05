@@ -97,6 +97,7 @@ h2 {
 
 .card {
   display: flex;
+  width: 95%;
   flex-wrap: wrap;
   position: relative;
   margin: 5px auto 20px auto;
@@ -194,7 +195,7 @@ h4 {
 
 .form {
   flex-wrap: wrap;
-  width: 90%;
+  width: 95%;
   margin: auto;
   background-color: var(--primary-background-color);
   border: 1px solid var(--border-color);
@@ -307,11 +308,11 @@ button {
   }
   
   .form {
-    width: 600px;
+    width: 70%;
   }
 
   .card {
-    width: 45%;
+    width: 30%;
     justify-content: center;
   }
 
@@ -338,7 +339,11 @@ button {
   }
 
   .card {
-    width: 30%;
+    width: 23%;
     justify-content: center;
+  }
+
+  .form {
+    width: 50%;
   }
 }
