@@ -57,6 +57,7 @@ Frontend dependencies (loaded via CDN):
 
 ## Future improvements
 - Improve accessibility of edit and delete buttons
+- Create a "view only"/way to protect a viewer from editing the collection
 
 ## Acknowledgements
 - This project is an iteration on the female supervillain trading card app and recipe app <a href="https://skillcrush.com/" target="_blank">Skillcrush</a> projects.
